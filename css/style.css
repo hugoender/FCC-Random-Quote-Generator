@@ -5,11 +5,12 @@
 
 .quote-text {
   padding: 10px;
+  height: 150px;
   color: black;
 }
 
 .quote-gen-div {
-  padding: 50px 0px 20px 0px; 
+  padding: 10px 0px 20px 0px; 
 }
 
 .btn-new-quote {
