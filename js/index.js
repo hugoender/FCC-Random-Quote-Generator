@@ -1,3 +1,6 @@
+var randomQuote = '';
+var randomAuthor = '';
+
 $(document).ready(function() {
   // Load random quote on page load
   $.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?', genQuote);
@@ -32,14 +35,24 @@ $(document).ready(function() {
 
 function genQuote(response) {
   
-  // Parse out the quote and author from returned API JSON data
-  var randomQuote = response.quoteText + ' -' + response.quoteAuthor;
-  //console.log (randomQuote);
+  // Check to see if there is an author
+  if (response.quoteAuthor.length > 0){
+    // Parse out the quote and author from returned API JSON data
+    randomQuote = response.quoteText;
+    randomAuthor = '-' + response.quoteAuthor;
+    //console.log (randomQuote);
+  }
+  else{
+    console.log('empty author');
+    randomQuote = response.quoteText;
+    randomAuthor = '-Unknown';
+  }
   // Get a random quote for the prepopulated array
   //var randomQuote = quotesArray[getRandomNum(0, 8)];
   
   // Change text in the #quote span to the random quote generated
   $("#quote").text(randomQuote);
+  $("#author").text(randomAuthor);
 
   //ev.preventDefault();
   // Remove existing iframe
