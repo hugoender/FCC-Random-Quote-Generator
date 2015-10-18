@@ -1,3 +1,7 @@
+body {
+  color: black;
+}
+
 .banner-block {
   background-color: #a9ffa9;
   padding: 20px;
@@ -10,20 +14,37 @@
 }
 
 .quote-gen-div {
-  padding: 10px 0px 20px 0px; 
+  padding: 10px 0 20px 0; 
 }
 
 .btn-new-quote {
   padding: 10px 100px;
   font-size: 20px;
   border-radius: 0;
-  background-color: #d2e7ff;
+  background-color: #d99aff;
 }
 
-.credits-section{
-  padding: 100px 0px 0px 0px;
+.btn-new-quote:active {
+  background-color: #e2b3ff;
 }
 
-#author{
+.btn-new-quote:active, .btn-new-quote:focus {
+  outline: none !important;
+}
+
+.credits-section {
+  padding: 100px 0 0 0;
+}
+
+.fa-twitter {
+  color: black;
+}
+
+.fa-twitter:hover {
+  color: #0478fd;
+  text-decoration: none;
+}
+
+#author {
   font-style: italic;
 }

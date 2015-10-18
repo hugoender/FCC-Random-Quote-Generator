@@ -17,7 +17,7 @@ $(document).ready(function() {
     // Stop icon animation on button
     var stopAnimation = function(){
       $("#cog-icon").removeClass('fa-spin');
-    }
+    };
     
     // Set time interval to wait before stopping animation
     setTimeout(stopAnimation, 600);
@@ -54,6 +54,8 @@ function genQuote(response) {
   $("#quote").text(randomQuote);
   $("#author").text(randomAuthor);
 
+/* Uncomment both code blocks below to use Twitter API ----------
+
   //ev.preventDefault();
   // Remove existing iframe
   $('#tweetBtn iframe').remove();
@@ -66,8 +68,29 @@ function genQuote(response) {
     .attr('data-text', randomQuote);
   $('#tweetBtn').append(tweetBtn);
   twttr.widgets.load();
-
+  
+*/
+  
+  // Create tweet URL
+		function tweetURL(quote, author) {
+    var text = '';
+    // Make sure it fits within 140 chars
+    // This includes space and dash
+    if (quote.length + author.length + 2 > 140) {
+      text = quote.substring(0, (141 - author.length - 5)) + "... " + author;
+    } 
+    else {
+      text = quote + " " + author;
+    }
+    
+    return 'http://twitter.com/home/?status=' + encodeURIComponent(text);
+		}
+  
+  // Refresh Twitter button URL
+  $('#tweetBtn').attr('href', tweetURL(randomQuote, randomAuthor));
 }
+
+/* Uncomment code below to use Twitter API ----------
 
 // Twitter API function
 ! function(d, s, id) {
@@ -80,3 +103,5 @@ function genQuote(response) {
     fjs.parentNode.insertBefore(js, fjs);
   }
 }(document, 'script', 'twitter-wjs');
+
+*/
