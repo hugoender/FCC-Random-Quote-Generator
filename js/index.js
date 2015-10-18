@@ -72,7 +72,7 @@ function genQuote(response) {
 */
   
   // Create tweet URL
-		function tweetURL(quote, author) {
+  function tweetURL(quote, author) {
     var text = '';
     // Make sure it fits within 140 chars
     // This includes space and dash
