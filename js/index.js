@@ -82,8 +82,8 @@ function genQuote(response) {
     else {
       text = quote + " " + author;
     }
-    
-    return 'http://twitter.com/home/?status=' + encodeURIComponent(text);
+    return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
+    //return 'http://twitter.com/home/?status=' + encodeURIComponent(text);
 		}
   
   // Refresh Twitter button URL
