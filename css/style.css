@@ -40,7 +40,7 @@ body {
   color: black;
 }
 
-.fa-twitter:hover {
+.fa-twitter:hover, .fa-twitter:focus, .fa-twitter:active {
   color: #0478fd;
   text-decoration: none;
 }
